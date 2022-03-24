@@ -4,8 +4,8 @@ import br.com.treinaweb.calculadora.interfaces.calculadorMatematico;
 
 public abstract class CalculoMatematico implements calculadorMatematico {
 
-	private int numero1;
-	private int numero2;
+	protected int numero1;
+	protected int numero2;
 	
 	public CalculoMatematico(int numero1, int numero2) {
 		this.numero1 = numero1;
@@ -13,13 +13,13 @@ public abstract class CalculoMatematico implements calculadorMatematico {
 	}
 	
 	@Override
-	public boolean validar() {
+	public boolean Validar() {
 		return numero1 >= 0 && numero2 >= 0;
 	}
 
 	@Override
-	public final int calcular() {
-		if(validar()) {
+	public final int Calcular() {
+		if(Validar()) {
 			return doCalcular();
 		}else {
 			return -1;
